@@ -18,14 +18,21 @@ def load():
     from ucimlrepo import fetch_ucirepo
     for k in range(4):                   # retry with backoff
         try:
-            X = fetch_ucirepo(id=352).data.features
+            data = fetch_ucirepo(id=352).data
             break
         except Exception as e:
             print("download failed:", e); time.sleep(5 * 2 ** k)
     else:
         sys.exit("could not download dataset")
+    # InvoiceNo / StockCode have the "ID" role and are not in data.features,
+    # so use the full original table (fall back to ids + features).
+    X = getattr(data, "original", None)
+    if X is None or "InvoiceNo" not in X.columns:
+        X = pd.concat([data.ids, data.features], axis=1)
+        X = X.loc[:, ~X.columns.duplicated()]
     df = X.dropna(subset=["CustomerID"]).copy()
     df["CustomerID"] = df["CustomerID"].astype("int64")
+    df["InvoiceNo"] = df["InvoiceNo"].astype(str)
     df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
     return df.sort_values("InvoiceDate").reset_index(drop=True)
 
@@ -91,9 +98,9 @@ def evaluate(wins, q, seeds):
 
 def main():
     df = load()
-    inv = df.groupby("InvoiceNo").InvoiceDate.min().sort_values()
+    inv = df.groupby("InvoiceNo")["InvoiceDate"].min().sort_values()
     cut = inv.iloc[int(0.7 * len(inv))]                       # time-ordered split by invoice
-    is_tr = df.groupby("InvoiceNo").InvoiceDate.transform("min") < cut
+    is_tr = df.groupby("InvoiceNo")["InvoiceDate"].transform("min") < cut
     train, test = df[is_tr], df[~is_tr]
     wtr, wte = windows(train), windows(test)
     print(f"rows={len(df)} train={len(train)} test={len(test)} windows train/test={len(wtr)}/{len(wte)}")
