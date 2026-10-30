@@ -1,0 +1,35 @@
+{
+  "question": "On a real transaction log, how large is the empirical privacy loss of a standard HyperLogLog sketch, and can hash-based subsampling cut it at a small cost in accuracy?",
+  "method": "Weekly windows of distinct CustomerIDs from UCI Online Retail; time split 70/30 by invoice; subsampling rate tuned on training windows; per test window, outputs over random hash seeds for stream vs stream plus one new user are binned by quantiles and epsilon is the max abs log-probability ratio over bins with >=30 samples in both.",
+  "dataset": {
+    "name": "UCI Online Retail (rows with CustomerID)",
+    "source_url": "https://archive.ics.uci.edu/dataset/352/online+retail",
+    "n_rows": 406829,
+    "n_train": 265616,
+    "n_test": 141213,
+    "same_as_paper": false,
+    "baseline_is_papers_method": false
+  },
+  "metric_name": "mean empirical epsilon over held-out weekly windows (lower is better)",
+  "higher_is_better": false,
+  "baseline": "Standard HyperLogLog, precision 10, random seeded 64-bit hash, bias-corrected (linear counting) estimator.",
+  "improved": "Same HyperLogLog preceded by hash-based Bernoulli subsampling of items at a rate tuned on the training windows; count rescaled by 1/rate.",
+  "metrics": {
+    "baseline_score": 0.17156632809673522,
+    "improved_score": 0.08557613988446437,
+    "baseline_score_std": 0.004026262910888189,
+    "improved_score_std": 0.002568961542529479,
+    "baseline_mape": 0.01907510986838792,
+    "improved_mape": 0.041135487263445326,
+    "baseline_mape_std": 0.00010400535444933278,
+    "improved_mape_std": 0.0001816203826240076,
+    "baseline_worst_window_epsilon": 0.23106618726063133,
+    "improved_worst_window_epsilon": 0.13255284314661156,
+    "chosen_sampling_rate": 0.5,
+    "n_train_windows": 43.0,
+    "n_test_windows": 11.0,
+    "improvement": 0.08599018821227085,
+    "mape_increase": 0.022060377395057406
+  },
+  "notes": "Empirical epsilon is a statistical lower-bound-style estimate from 2000 hash seeds per window and 8 quantile bins; it has a positive noise floor even for identical distributions and depends on binning and the min-count threshold. Only one added user is tested per window. Windows are weekly (some partial) with >=20 customers. Selection rule: lowest training epsilon with MAPE at most 5 points above baseline. Mean/std are over three hash-seed sets (42-44); data is not resampled."
+}

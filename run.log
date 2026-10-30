@@ -1,0 +1,81 @@
+Collecting numpy (from -r requirements.txt (line 1))
+  Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas (from -r requirements.txt (line 2))
+  Downloading pandas-3.1.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (18 kB)
+Collecting matplotlib (from -r requirements.txt (line 3))
+  Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting ucimlrepo (from -r requirements.txt (line 4))
+  Downloading ucimlrepo-0.0.7-py3-none-any.whl.metadata (5.5 kB)
+Collecting python-dateutil>=2.9.0 (from pandas->-r requirements.txt (line 2))
+  Downloading python_dateutil-3.0.0-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 3))
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 3))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib->-r requirements.txt (line 3))
+  Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 3))
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib->-r requirements.txt (line 3))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib->-r requirements.txt (line 3))
+  Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib->-r requirements.txt (line 3))
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting certifi>=2020.12.5 (from ucimlrepo->-r requirements.txt (line 4))
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting six>=1.6 (from python-dateutil>=2.9.0->pandas->-r requirements.txt (line 2))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting tzdata (from python-dateutil>=2.9.0->pandas->-r requirements.txt (line 2))
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 59.2 MB/s  0:00:00
+Downloading pandas-3.1.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.3/12.3 MB 183.9 MB/s  0:00:00
+Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 250.2 MB/s  0:00:00
+Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 290.6 MB/s  0:00:00
+Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 244.8 MB/s  0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 321.6 MB/s  0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-3.0.0-py2.py3-none-any.whl (94 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, certifi, python-dateutil, contourpy, pandas, matplotlib, ucimlrepo
+
+Successfully installed certifi-2026.10.23 contourpy-1.3.3 cycler-0.12.1 fonttools-4.68.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.4.6 packaging-26.3 pandas-3.1.0 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-3.0.0 six-1.17.0 tzdata-2026.6 ucimlrepo-0.0.7
+rows=406829 train=265616 test=141213 windows train/test=43/11
+  tune q=0.5: eps=0.129 mape=0.054 (baseline mape=0.019)
+  tune q=0.3: eps=0.100 mape=0.080 (baseline mape=0.019)
+  tune q=0.2: eps=0.081 mape=0.103 (baseline mape=0.019)
+  tune q=0.1: eps=0.062 mape=0.150 (baseline mape=0.019)
+  tune q=0.05: eps=0.049 mape=0.218 (baseline mape=0.019)
+chosen rate: 0.5
+run 42: base=(np.float64(0.1731440701768136), np.float64(0.018948732523312015), np.float64(0.23386432105931146)) imp=(np.float64(0.08487371928871931), np.float64(0.040885364655053075), np.float64(0.1016326455438119))
+run 43: base=(np.float64(0.16603939447923324), np.float64(0.01907312764542894), np.float64(0.23522497228841388)) imp=(np.float64(0.08284039389976695), np.float64(0.04131112480371166), np.float64(0.15847034097177473))
+run 44: base=(np.float64(0.1755155196341588), np.float64(0.019203469436422798), np.float64(0.22410926843416867)) imp=(np.float64(0.08901430646490684), np.float64(0.04120997233157124), np.float64(0.1375555429242481))
+{
+  "baseline_score": 0.17156632809673522,
+  "improved_score": 0.08557613988446437,
+  "baseline_score_std": 0.004026262910888189,
+  "improved_score_std": 0.002568961542529479,
+  "baseline_mape": 0.01907510986838792,
+  "improved_mape": 0.041135487263445326,
+  "baseline_mape_std": 0.00010400535444933278,
+  "improved_mape_std": 0.0001816203826240076,
+  "baseline_worst_window_epsilon": 0.23106618726063133,
+  "improved_worst_window_epsilon": 0.13255284314661156,
+  "chosen_sampling_rate": 0.5,
+  "n_train_windows": 43.0,
+  "n_test_windows": 11.0,
+  "improvement": 0.08599018821227085,
+  "mape_increase": 0.022060377395057406
+}
